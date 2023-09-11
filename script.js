@@ -18,3 +18,19 @@ function divide (num1, num2) {
     let quotient = num1 / num2;
     return quotient;
 }
+function operate (operation, num1, num2) {
+    switch (operation) {
+        case "addition":
+            return add(num1, num2);
+            break;
+        case "subtraction":
+            return subtract(num1, num2);
+            break;
+        case "multiplication":
+            return multiply(num1, num2);
+            break;
+        case "division":
+            return divide(num1, num2);
+            break;
+    }
+}
