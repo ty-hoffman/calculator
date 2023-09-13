@@ -53,11 +53,19 @@ function operate () {
     }
 }
 function setOperation (e) {
+    if (operation != "") {
+        operate();
+        operation = e.target.id;
+        num1 = Number(screenSelector.innerText);
+        displayValue = "";
+    }
+    else {
     operation = e.target.id;
     num1 = Number(displayValue);
     displayValue = "";
+    screenSelector.innerText = displayValue
+    }
 }
-
 function clearDisplayValue () {
     num1 = 0;
     num2 = 0;
