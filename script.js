@@ -59,6 +59,9 @@ function setOperation (e) {
 }
 
 function clearDisplayValue () {
+    num1 = 0;
+    num2 = 0;
+    operation = "";
     displayValue = "";
     screenSelector.innerText = displayValue;
 }
