@@ -5,45 +5,59 @@ let displayValue = "";
 let numberSelector = document.querySelectorAll(".num");
 let screenSelector = document.querySelector(".screen");
 let clearSelector = document.querySelector(".clearButton");
+let operationSelector = document.querySelectorAll(".operation");
+let equalsSelector = document.querySelector(".equals");
 
 numberSelector.forEach(number => {
     number.addEventListener("click", updateDisplayValue)
 });
 
-clearSelector.addEventListener("click", clearDisplayValue);
+operationSelector.forEach(operation => {
+    operation.addEventListener("click", setOperation)
+});
 
-function add (num1, num2) {
-    let sum = num1 + num2;
+clearSelector.addEventListener("click", clearDisplayValue);
+equalsSelector.addEventListener("click", operate);
+
+function add (x, y) {
+    let sum = x + y;
     return sum;
 }
-function subtract (num1, num2) {
-    let difference = num1 - num2;
+function subtract (x, y) {
+    let difference = x - y;
     return difference;
 }
-function multiply (num1, num2) {
-    let product = num1 * num2;
+function multiply (x, y) {
+    let product = x * y;
     return product;
 }
-function divide (num1, num2) {
-    let quotient = num1 / num2;
+function divide (x, y) {
+    let quotient = x / y;
     return quotient;
 }
-function operate (operation, num1, num2) {
+function operate () {
+    num2 = Number(displayValue);
     switch (operation) {
-        case "addition":
-            return add(num1, num2);
+        case "plus":
+            screenSelector.innerText = add(num1, num2);
             break;
-        case "subtraction":
-            return subtract(num1, num2);
+        case "sub":
+            screenSelector.innerText = subtract(num1, num2);
             break;
-        case "multiplication":
-            return multiply(num1, num2);
+        case "mult":
+            screenSelector.innerText = multiply(num1, num2);
             break;
-        case "division":
-            return divide(num1, num2);
+        case "div":
+            screenSelector.innerText = divide(num1, num2);
             break;
     }
 }
+function setOperation (e) {
+    operation = e.target.id;
+    num1 = Number(displayValue);
+    displayValue = "";
+}
+
 function clearDisplayValue () {
     displayValue = "";
     screenSelector.innerText = displayValue;
