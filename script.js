@@ -4,10 +4,13 @@ let operation = "";
 let displayValue = "";
 let numberSelector = document.querySelectorAll(".num");
 let screenSelector = document.querySelector(".screen");
+let clearSelector = document.querySelector(".clearButton");
 
 numberSelector.forEach(number => {
     number.addEventListener("click", updateDisplayValue)
 });
+
+clearSelector.addEventListener("click", clearDisplayValue);
 
 function add (num1, num2) {
     let sum = num1 + num2;
@@ -41,7 +44,10 @@ function operate (operation, num1, num2) {
             break;
     }
 }
-
+function clearDisplayValue () {
+    displayValue = "";
+    screenSelector.innerText = displayValue;
+}
 function updateDisplayValue (e) {
     let numberClicked = e.target.innerText;
     displayValue = displayValue.concat(numberClicked);
