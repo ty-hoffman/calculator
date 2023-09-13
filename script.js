@@ -21,19 +21,19 @@ equalsSelector.addEventListener("click", operate);
 
 function add (x, y) {
     let sum = x + y;
-    return sum;
+    return +sum.toFixed(6);
 }
 function subtract (x, y) {
     let difference = x - y;
-    return difference;
+    return +difference.toFixed(6);
 }
 function multiply (x, y) {
     let product = x * y;
-    return product;
+    return +product.toFixed(6);
 }
 function divide (x, y) {
     let quotient = x / y;
-    return quotient;
+    return +quotient.toFixed(6);
 }
 function operate () {
     num2 = Number(displayValue);
