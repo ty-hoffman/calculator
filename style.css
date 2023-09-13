@@ -30,8 +30,14 @@ button {
     font-size: 20px;
     background-color: aliceblue;
 }
+.operation {
+    background-color: #ADD8E6;
+}
 .clearButton {
     margin-left: auto;
+}
+.clear {
+    background-color: lightcoral;
 }
 .screen {
     box-sizing: border-box;
