@@ -74,6 +74,9 @@ function clearDisplayValue () {
     screenSelector.innerText = displayValue;
 }
 function updateDisplayValue (e) {
+    if (e.target.innerText == "." && displayValue.includes(".")) {
+        return;
+    }
     let numberClicked = e.target.innerText;
     displayValue = displayValue.concat(numberClicked);
     screenSelector.innerText = displayValue;
